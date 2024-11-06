@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/three.css"> 
+    <style>
+        /* 設置整體背景 */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+            background-image: url('images/04.png'); /* 替換為您的背景圖檔 */
+            background-size: cover;
+            background-position: center 20px;
+            overflow: hidden;
+            position: relative; /* 為了讓子元素絕對定位 */
+            
+        }
+        
+        .three {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    width: 1800px; /* 調整LOGO大小 */
+    animation: fadeInOut 7s ease-in-out infinite; /* 添加淡出淡入動畫 */
+    z-index: -2;
+
+    /* 調整上下位置 */
+    top: 40%; /* 設置上邊距為 50% */
+    left: 50%; /* 設置左邊距為 50% */
+    transform: translate(-50%, -50%); /* 調整元素以使其居中 */
+}
+
+.four {
+            position: absolute;
+            top: -120px;
+            left: 60px;
+            height: auto;
+            width: 1800px; /* 調整LOGO大小 */
+            animation: zoomOut 1.5s ease-in-out forwards; /* 添加動畫 */
+            z-index: 1;
+        }
+
+        @keyframes zoomOut {
+            0% {
+                transform: scale(2); /* 開始時放大至2倍 */
+                opacity: 1; /* 完全可見 */
+            }
+            60% {
+                transform: scale(1); /* 縮小到原始大小 */
+                opacity: 1; /* 仍然可見 */
+            }
+            100% {
+                transform: scale(0); /* 縮小到0 */
+                opacity: 0; /* 完全透明 */
+            }
+        }
+
+        /* 淡出淡入動畫 */
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 1; /* 初始與結束透明度 */
+            }
+            50% {
+                opacity: 0; /* 中間透明度 */
+            }
+        }
+
+        .cute {
+            position: fixed; /* 固定定位，讓元素固定在視口位置 */
+            bottom: 30px; /* 距離視口底部 30px */
+            right: 170px; /* 距離視口右側 170px */
+            width: 420px; /* 調整圖片大小 */
+            opacity: 0; /* 初始透明度 */
+            animation: fadeInRotate 5s forwards; /* 添加淡入旋轉動畫 */
+            z-index: 0;
+        }
+
+        @keyframes fadeInRotate {
+            0% {
+                opacity: 0; /* 開始時完全透明 */
+                transform: translateX(20%) rotate(0deg); /* 從右側偏移 */
+            }
+            58% {
+                opacity: 0; /* 中間透明度 */
+                transform: translateX(20%) rotate(0deg); /* 保持在右側偏移 */
+            }
+            100% {
+                opacity: 1; /* 最終顯示 */
+                transform: translateX(-25%) rotate(-10deg); /* 向左偏移並旋轉 -10 度 */
+            }
+        }
+        
+        .logo {
+            position: absolute;
+            top: -50px; /* 調整頂部間距 */
+            left: 50%;
+            transform: translateX(-50%); /* 水平居中 */
+            width: 150px; /* 調整LOGO大小 */
+        }
+
+        /* 左上角圖片設置 */
+        .top-left-image {
+            position: absolute;
+            top: -50px; /* 調整頂部間距 */
+            left: 20px; /* 調整左邊距 */
+            width: 200px; /* 調整圖片寬度 */
+        }
+
+        /* 右側圖片設置 */
+        .right-image {
+            position: absolute;
+            right: 20px; /* 調整右邊距離 */
+            bottom: -100%; /* 初始位置在下方外部 */
+            width: 300px; /* 調整圖片寬度 */
+            border-radius: 8px; /* 圖片圓角 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 陰影效果 */
+            animation: slideInFromBottom 2.5s ease forwards; /* 添加動畫 */
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                bottom: -100%; /* 開始時在下方外部 */
+                opacity: 0; /* 初始透明度 */
+            }
+            50% {
+                bottom: -100%; /* 保持在下方外部 */
+                opacity: 0; /* 初始透明度 */
+            }
+            100% {
+                bottom: 20px; /* 最終位置在指定的距離 */
+                opacity: 1; /* 最終透明度 */
+            }
+        }
+
+        .rotated-image {
+            position: absolute;
+            right: 90px; /* 靠右 */
+            bottom: 80px; /* 設置底部距離，使其在視口內可見 */
+            width: 290px; /* 調整圖片寬度 */
+            border-radius: 8px; /* 圖片圓角 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 陰影效果 */
+            transform: rotate(-8deg); /* 旋轉 -8 度 */
+            opacity: 0; /* 初始透明度 */
+            transition: opacity 0.5s ease; /* 添加過渡效果 */
+        }
+    </style>
+</head>
+<body>
+    <!-- LOGO 圖片在上方中心 -->
+    
+
+    <img src="images/logo.png" alt="LOGO" class="logo">
+
+    <img src="images/網頁4.png" alt="four" class="four">
+
+    <img src="images/03.png" alt="three" class="three">
+    
+    <img src="images/cute.png" alt="Cute Image" class="cute">
+
+    <div class="衣服-container"> <!-- 包裹所有衣服組的容器 -->
+        <div class="衣服-group">
+            <img class="衣服" src="images/衣服堆-11.png" alt="衣服堆" style="width: 300px; height: auto;">
+            <div class="button-group">
+                <button class="衣服-button">S</button>
+                <button class="衣服-button">M</button>
+                <button class="衣服-button">L</button>
+                <button class="衣服-button">XL</button>
+            </div>
+        </div>
+    
+        <div class="衣服-group">
+            <img class="衣服" src="images/衣服堆-21.png" alt="衣服堆" style="width: 300px; height: auto;">
+            <div class="button-group">
+                <button class="衣服-button">S</button>
+                <button class="衣服-button">M</button>
+                <button class="衣服-button">L</button>
+                <button class="衣服-button">XL</button>
+            </div>
+        </div>
+    
+        <div class="衣服-group">
+            <img class="衣服" src="images/衣服堆-27.png" alt="衣服堆" style="width: 300px; height: auto;">
+            <div class="button-group">
+                <button class="衣服-button">S</button>
+                <button class="衣服-button">M</button>
+                <button class="衣服-button">L</button>
+                <button class="衣服-button">XL</button>
+            </div>
+        </div>
+    </div>
+    <div class="info-section">
+        <p>加入會員立即獲得首購折扣！歡迎加入我們的社群，追蹤最新潮流與活動。有任何問題請聯繫我們的客服團隊，我們將竭誠為您服務！</p>
+    </div>
+    
+    
+    <!-- 左上角的圖片 -->
+    <a href="twowo.html" target="_blank"> <!-- 替換為目標網址 -->
+        <img src="images/黑底.png" alt="黑底" class="top-left-image"> <!-- 圖片在這裡作為可點擊的元素 -->
+    </a>
+
+    <!-- 靠右圖片 -->
+    <img src="images/長條.png" alt="長條" class="rotated-image"> <!-- 複製圖片 -->
+    <img src="images/長條.png" alt="長條" class="right-image"> <!-- 替換為您的圖片檔案 -->
+    
+    <script>
+        window.onload = function() {
+            // 取得元素
+            const rightImage = document.querySelector('.right-image');
+            const rotatedImage = document.querySelector('.rotated-image');
+
+            // 等待主圖片的動畫結束
+            rightImage.addEventListener('animationend', () => {
+                // 將複製圖片顯示並淡入
+                rotatedImage.style.bottom = '35px'; // 設定在主圖片下方
+                rotatedImage.style.opacity = '1'; // 淡入效果
+            });
+        };
+    </script>
+     </main>
+
+     
+</body>
+</html>

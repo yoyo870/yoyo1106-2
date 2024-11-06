@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1920x1080 背景圖示範</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- 確保這裡的路徑正確 -->
+    <style>
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden; /* 隱藏超出範圍的內容 */
+            margin: 0;
+            font-family: 'Note Sans', sans-serif;
+            background-image: url('images/網頁封底.png'); /* 替換為您的底圖 */
+            background-size: 1920px 1080px;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 使內容垂直居中 */
+            position: relative; /* 使子元素可以絕對定位 */
+        }
+        .moving-image {
+    position: absolute;
+    top: 50%; /* 垂直居中開始 */
+    right: 12%; /* 從左側開始 */
+    transform: translateY(-50%); /* 垂直中心對齊 */
+    width: 160%; /* 設置為固定寬度1920px */
+    animation: moveImage 20s linear infinite; /* 添加動畫，修改為5秒完成一次 */
+    z-index: -2; /* 確保移動的圖片在最上面 */
+    opacity: 0.5; /* 設置固定透明度為70% */
+}
+
+@keyframes moveImage {
+    0% {
+        top: 40%; /* 開始位置：上方 */
+    }
+    25% {
+        top: 50%; /* 中間位置 */
+    }
+    50% {
+        top: 60%; /* 底部位置 */
+    }
+    75% {
+        top: 50%; /* 返回中間位置 */
+    }
+    100% {
+        top: 40%; /* 返回上方 */
+    }
+}
+        .ig {
+            position: absolute; /* 設置絕對定位 */
+            width: 1.5%; /* 設定寬度 */
+            top: 30px; /* 距離頂部 20px */
+            right: 30px; /* 距離右側 20px */
+            opacity: 0.5;
+}
+            
+        .people {
+            width: 90%; /* 調整人圖片的大小 */
+            position: absolute;
+            bottom: 0%; /* 調整位置 */
+            left: 47%; /* 中心定位 */
+            transform: translateX(-50%) rotate(-90deg); /* 中心對齊並從 0 度開始旋轉 */
+            z-index: 2; /* 確保人在圖片上方 */
+            opacity: 0; /* 初始透明度 */
+            animation: fadeInRotate 2s forwards; /* 添加淡入旋轉動畫 */
+        }
+
+        @keyframes fadeInRotate {
+            to {
+                opacity: 1; /* 最終透明度 */
+                transform: translateX(-50%) rotate(0deg); /* 順時針旋轉 90 度 */
+            }
+        }
+
+        .logo {
+            width: 20%;
+            position: absolute;
+            bottom: 80px; /* 調整位置 */
+            right: 300%; /* 初始位置在右側之外 */
+            animation: slideIn 2s forwards, fadeIn 4s forwards, scaleRotate 7s infinite; /* 添加滑入、淡入和縮放旋轉動畫 */
+            z-index: 3; /* 確保標誌在圖片上方 */
+        }
+
+        @keyframes slideIn {
+            from {
+                right: -30%; /* 從右側外部開始 */
+            }
+            to {
+                right: 140px; /* 移動到最終位置 */
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* 初始透明度 */
+            }
+            to {
+                opacity: 1; /* 最終透明度 */
+            }
+        }
+
+        @keyframes scaleRotate {
+            0% {
+                transform: scale(1) rotate(0deg); /* 初始狀態 */
+            }
+            25% {
+                transform: scale(0.8) rotate(360deg); /* 縮小並旋轉 */
+            }
+            50% {
+                transform: scale(1) rotate(360deg); /* 放大並旋轉 */
+            }
+            75% {
+                transform: scale(1) rotate(360deg); /* 保持放大並旋轉 */
+            }
+            100% {
+                transform: scale(1) rotate(360deg); /* 返回到原始狀態 */
+            }
+        }
+
+        .content {
+            text-align: center;
+            z-index: 4; /* 確保內容在圖片上方 */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="images/網頁4.png" alt="moving image" class="moving-image">
+    <!-- 介紹文字區塊 -->
+    
+
+    <!-- 圖片和 Logo -->
+    >
+    
+    <img src="images/IG ICON.png" alt="IG" class="ig">
+    <img src="images/人.png" alt="people" class="people"> <!-- 替換為您的人圖片 -->
+    <img src="images/logo.png" alt="Logo" class="logo"> <!-- 替換為您的標誌 -->
+    
+    <!-- 內容區塊 -->
+    <div class="content">
+        <h2>「每一件都有故事，讓它們繼續旅行！」</h2>
+        <p>By Zhang Hecheng / Hsiaoching</p>
+    </div>
+</body>
+<a href="twowo.html" target="_blank"> <!-- 替換為目標網址 -->
+    <img src="images/logo.png" alt="Logo" class="logo"> <!-- 圖片在這裡作為可點擊的元素 -->
+</a> 
+<a href="https://www.instagram.com/030issocute/" target="_blank"> <!-- 替換為目標網址 -->
+    <img src="images/IG ICON.png" alt="IG" class="ig"> <!-- 圖片在這裡作為可點擊的元素 -->
+</a> 

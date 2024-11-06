@@ -1,0 +1,41 @@
+.intro {
+    position: absolute;
+    top: 55%; /* 垂直置中 */
+    right: 8%; /* 距離右邊 10% */
+    transform: translateY(-80%); /* 垂直居中調整 */
+    width: 16.5%; /* 調整文字區塊寬度 */
+    padding: 20px; /* 添加內邊距以增加可讀性 */
+    background-color: rgba(255, 255, 255, 0.2); /* 背景顏色 */
+    border: 0px solid #ccc; /* 邊框樣式 */
+    color: white ; /* 設定文字顏色 */
+    text-align: right; /* 文字靠左對齊 */
+}
+.intro h2 {
+    font-size: 18px; /* 字體大小 */
+    line-height: 1.6;
+    font-weight: bold; /* 可選，加粗 */
+    color: white; /* 可選，改變顏色 */
+    font-family: 'Times New Roman', sans-serif;
+
+}
+
+.intro p {
+    font-size: 13px; /* 修改 p 的字體大小 */
+    line-height: 1.7;
+    color: white; /* 可選，改變顏色 */
+    font-family: 'Times New Roman', sans-serif;
+}
+
+
+.content h2 {
+    /*font-size: 10px; /* 修改 h1 的字體大小 */
+    font-weight: bold; /* 可選，加粗 */
+    color: white; /* 可選，改變顏色 */
+}
+
+.content p {
+    /*font-size: 5px; /* 修改 p 的字體大小 */
+    line-height: 0; /* 可選，增加行距 */
+    color: white; /* 可選，改變顏色 */
+    font-family: 'Times New Roman', sans-serif;
+}

@@ -1,0 +1,76 @@
+.衣服-container {
+    display: flex; /* 使用 Flexbox */
+    justify-content: flex-start; /* 向左對齊所有項目 */
+    align-items: flex-start; /* 垂直對齊 */
+    margin-top: 100px; /* 上方間距 */
+    margin-left: 60px; /* 左側間距 */
+    padding: 100px; /* 內部邊距 */
+    gap: 50px; /* 調整衣服組之間的間距 */
+    animation: scaleIn 3s forwards; /* 添加動畫，5秒內從 0% 放大到 100% */
+}
+
+.衣服-group {
+    text-align: center; /* 按鈕文字居中 */
+    margin-top: 70px; /* 調整這個值以增加與容器的距離 */
+}
+
+/* 動畫效果 */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0); /* 開始時縮小到 0% */
+    }
+    80% {
+        transform: scale(0); /* 開始時縮小到 0% */
+    }
+    100% {
+        transform: scale(1); /* 結束時恢復到 100% */
+    }
+}
+
+.衣服-button,
+.衣服-image {
+    margin: 5px; /* 按鈕和圖片之間的間距 */
+    border: 0; /* 邊框樣式 */
+    background-color: rgba(255, 255, 255, 0.5); /* 初始底色 */
+    color: black; /* 初始文字顏色 */
+    padding: 12px 15px; /* 增加按鈕的內部填充，增加高度 */
+    cursor: pointer; /* 指標改變為手指 */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* 添加過渡效果 */
+    width: 40px; /* 調整按鈕的寬度 */
+    font-size: 12px; /* 調整字體大小 */
+    border-radius: 0px; /* 可選：添加圓角效果，使按鈕更美觀 */
+    animation: scaleIn 5s forwards; /* 添加動畫，5秒內從 0% 放大到 100% */
+}
+
+.衣服-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* 懸停時底色變為黑色 */
+    color: white; /* 懸停時文字顏色變為白色 */
+    transform: scale(1.1); /* 懸停時放大按鈕 */
+}
+
+.衣服-button:active {
+    background-color: black; /* 按下時底色變為黑色 */
+    color: white; /* 按下時文字顏色變為白色 */
+    transform: scale(1); /* 按下時恢復原大小 */
+}
+
+.衣服-image {
+    width: 100px; /* 調整圖片的寬度 */
+    height: auto; /* 自動調整高度以保持比例 */
+    
+}
+.info-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 10;
+}
+
+.info-section p {
+    margin: 0;
+}
